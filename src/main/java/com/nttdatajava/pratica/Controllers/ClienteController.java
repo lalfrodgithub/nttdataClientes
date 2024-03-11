@@ -4,6 +4,7 @@ import com.nttdatajava.pratica.Exceptions.RecordNotFoundException;
 import com.nttdatajava.pratica.Models.Cliente;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+//import org.springframework.http.HttpStatus;
 
 
 
@@ -15,7 +16,7 @@ public class ClienteController {
   @GetMapping( path = "/{tipo}/{documento}")
   public ResponseEntity<?> getClienteById(@PathVariable("tipo") String tipo, @PathVariable("documento") Long documento) {
     
-    try {
+  //  try {
       
     
     if (tipo.equals("C") || tipo.equals("P")) {
@@ -36,10 +37,10 @@ public class ClienteController {
     return ResponseEntity.ok(cliente);
   
   
-  } catch (Exception e) {
+  //} catch (Exception e) {
     // TODO: handle exception
-    throw new RecordNotFoundException("Falla en el servicio: " + e);
-  }
+  //  throw new RecordNotFoundException("Falla en el servicio: " + e);
+  //}
 
 
   }
